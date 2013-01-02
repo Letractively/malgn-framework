@@ -1,9 +1,30 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+== Step 1 ==
+아래와 같이 3개의 파일을 만든다.
+{{{
+/init.jsp
+/main/test.jsp
+/html/main/test.html
+}}}
 
-Add your content here.
+init.jsp
+{{{
+<%@ page import="java.util.*, java.io.*, dao.*, malgnsoft.db.*, malgnsoft.util.*" %><%
 
+String tplRoot = Config.getTplRoot();
+
+Malgn m = new Malgn(request, response, out);
+
+Form f = new Form("form1");
+f.setRequest(request);
+
+Page p = new Page(tplRoot);
+p.setRequest(request);
+p.setPageContext(pageContext);
+
+%>
+}}}
 
 = Details =
 
