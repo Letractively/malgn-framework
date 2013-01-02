@@ -37,3 +37,19 @@ p.display(out);
 
 %>
 }}}
+
+== Step3 ==
+프로그램과 연결될 html 파일을 만든다.
+{{{
+/html/main/index.html
+}}}
+{{{
+<html>
+<body>
+시작 페이지 입니다.
+</body>
+</html>
+}}}
+
+
+
