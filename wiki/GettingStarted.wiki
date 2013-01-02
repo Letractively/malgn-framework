@@ -23,9 +23,17 @@ p.setPageContext(pageContext);
 %>
 }}}
 
-= Details =
+== Step2 ==
+프로그램 jsp 파일을 만든다.
+{{{
+/main/index.jsp
+}}}
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+p.setLayout(null);
+p.setBody("main.index");
+p.display(out);
+
+%>
+}}}
