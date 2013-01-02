@@ -1,14 +1,11 @@
 #summary One-sentence summary of this page.
 
 == Step 1 ==
-아래와 같이 3개의 파일을 만든다.
+아래와 같이 웹프로그램 루트폴더에 아래 파일을 만든다.
 {{{
 /init.jsp
-/main/test.jsp
-/html/main/test.html
 }}}
 
-init.jsp
 {{{
 <%@ page import="java.util.*, java.io.*, dao.*, malgnsoft.db.*, malgnsoft.util.*" %><%
 
