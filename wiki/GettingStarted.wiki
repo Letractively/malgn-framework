@@ -51,5 +51,22 @@ p.display(out);
 </html>
 }}}
 
+== Step4 ==
+기본적인 템플릿 변수 치환은 아래와 같이 처리한다.
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
+p.setLayout(null);
+p.setBody("main.index");
+p.setVar("title", "시작 페이지");
+p.display(out);
 
+%>
+}}}
+{{{
+<html>
+<body>
+{{title}} 입니다.
+</body>
+</html>
+}}}
