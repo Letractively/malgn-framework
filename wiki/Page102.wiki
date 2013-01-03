@@ -1,3 +1,57 @@
 #summary HTML 폼 태그를 통한 데이타 입력/수정 처리
 
 == Step1 ==
+HTML 폼 태그를 이용한 회원가입 폼 작성
+/main/user_form.jsp
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+p.setLayout(null);
+p.setBody("main.user_form");
+p.display(out);
+
+%>
+}}}
+/html/main/user_form.html
+{{{
+<html>
+<body>
+<h3>회원가입</h3>
+<form name="form1" method="POST" action="user_insert.jsp">
+<p><label>이름</label><br><input type="text" name="name"></p>
+<p><label>이메일</label><br><input type="text" name="email" size="50"></p>
+<p><input type="submit" value="회원가입"></p>
+</form>
+</body>
+</html>
+}}}
+
+== Step2 ==
+회원가입을 위한 jsp 프로그램을 아래와 같이 작성한다.
+/main/user_insert.jsp
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+f.addElement("name", null, "hname:'이름', required:'Y'");
+f.addElement("email", null, "hname:'이메일', required:'Y', option:'email'");
+
+DataObject dao = new DataObject("tb_user");
+dao.item("name", f.get("name"));
+dao.item("email", f.get("email"));
+dao.insert();
+
+p.setLayout(null);
+p.setBody("main.user_insert");
+p.display(out);
+
+%>
+}}}
+/html/main/user_insert.html
+{{{
+<html>
+<body>
+<h3>회원가입</h3>
+<p>성공적으로 회원가입이 완료되었습니다.</p>
+</form>
+</body>
+</html>
+}}}
