@@ -64,3 +64,46 @@ p.display(out);
 </body>
 </html>
 }}}
+
+== Step3 ==
+회원정보를 등록하기
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject("tb_user");
+dao.item("name", "홍길동");
+dao.item("email", "hong@gmail.com");
+dao.insert();
+
+%>
+}}}
+insert 메소드의 리턴값은 boolean 이다.
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject();
+dao.execute("INSERT INTO tb_user (name, email) VALUES ('홍길동', 'hong@gmail.com')");
+
+%>
+}}}
+execute 메소도의 리턴값은 int 이며, 등록된 레코드의 갯수이다.
+
+== Step4 ==
+회원정보를 수정하기
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject("tb_user");
+dao.item("email", "hong@gmail.com");
+dao.update("name = '홍길동'");
+
+%>
+}}}
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject("tb_user");
+dao.execute("UPDATE tb_user SET email = 'hongkildong@gmail.com' WHERE name = '홍길동'");
+
+%>
+}}}
