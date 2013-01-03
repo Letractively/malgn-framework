@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary 1. 맑은프레임워크 시작하기
 
 == Step 1 ==
 아래와 같이 웹프로그램 루트폴더에 아래 파일을 만든다.
@@ -85,41 +85,6 @@ rs.put("email", "hong@gmail.com");
 rs.addRow();
 rs.put("name", "김철수");
 rs.put("email", "kim@gmail.com");
-
-p.setLayout(null);
-p.setBody("main.index");
-p.setVar("title", "시작 페이지");
-p.setLoop("users", rs);
-p.display(out);
-
-%>
-}}}
-{{{
-<html>
-<body>
-{{title}} 입니다.
-<h3>회원목록</h3>
-<ul>
-  <!-- LOOP START 'users' -->
-  <li>{{users.name}} ({{users.email}})</li>
-  <!-- LOOP END 'users' -->
-</ul>
-</body>
-</html>
-}}}
-
-== Step6 ==
-{{{
-<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
-
-DataObject dao = new DataObject();
-DataSet rs = dao.query("SELECT * FROM tb_user WHERE name LIKE '%'");
-while(rs.next()) {
-	rs.put("name", rs.getString("name") + "장군");
-	String email = rs.getString("email");
-	if("".equals(email)) email = "empty@gmail.com";
-	rs.put("email", email);
-}
 
 p.setLayout(null);
 p.setBody("main.index");
