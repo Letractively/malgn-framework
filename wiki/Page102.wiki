@@ -17,11 +17,13 @@ p.display(out);
 <html>
 <body>
 <h3>회원가입</h3>
+
 <form name="form1" method="POST" action="user_insert.jsp">
-<p><label>이름</label><br/><input type="text" name="name"></p>
-<p><label>이메일</label><br/><input type="text" name="email" size="50"></p>
-<p><input type="submit" value="회원가입"></p>
+  <p><label>이름</label><br/><input type="text" name="name"></p>
+  <p><label>이메일</label><br/><input type="text" name="email" size="50"></p>
+  <p><input type="submit" value="회원가입"></p>
 </form>
+
 </body>
 </html>
 }}}
