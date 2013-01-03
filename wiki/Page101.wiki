@@ -8,10 +8,10 @@
 DataObject dao = new DataObject();
 DataSet rs = dao.query("SELECT * FROM tb_user WHERE name LIKE '%'");
 while(rs.next()) {
-	rs.put("name", rs.getString("name") + "장군");
-	String email = rs.getString("email");
-	if("".equals(email)) email = "empty@gmail.com";
-	rs.put("email", email);
+  rs.put("name", rs.getString("name") + "장군");
+  String email = rs.getString("email");
+  if("".equals(email)) email = "empty@gmail.com";
+  rs.put("email", email);
 }
 
 p.setLayout(null);
@@ -21,6 +21,7 @@ p.display(out);
 
 %>
 }}}
+while문 안에 있는 내용은 데이타베이스에서 가져온 정보를 화면에 출력할 때 필요에 따라 적절히 내용을 수정하기 위한 것이다. 위 예에서는 이름 옆에 "장군"이란 호칭을 붙이고 이메일 주소가 없는 사용자는 "empty@gmail.com" 이란 이메일을 출력하라는 내용이다.
 {{{
 <html>
 <body>
@@ -53,6 +54,7 @@ p.display(out);
 
 %>
 }}}
+데이타베이스에서 가져온 데이타의 레코드 갯수가 하나일 경우 if문을 통해 next() 메소드를 실행하고 그 조건에 따라 처리한다.
 {{{
 <html>
 <body>
@@ -103,8 +105,28 @@ dao.update("name = '홍길동'");
 {{{
 <%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
-DataObject dao = new DataObject("tb_user");
+DataObject dao = new DataObject();
 dao.execute("UPDATE tb_user SET email = 'hongkildong@gmail.com' WHERE name = '홍길동'");
+
+%>
+}}}
+
+== Step5 ==
+회원정보를 삭제하기
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject("tb_user");
+dao.delete("name = '홍길동'");
+
+%>
+}}}
+delete 메소드에 삭제할 회원정보의 조건을 넣어준다.
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject();
+dao.execute("DELETE FROM tb_user WHERE name = '홍길동'");
 
 %>
 }}}
