@@ -107,3 +107,38 @@ p.display(out);
 </body>
 </html>
 }}}
+
+== Step6 ==
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject();
+DataSet rs = dao.query("SELECT * FROM tb_user WHERE name LIKE '%'");
+while(rs.next()) {
+	rs.put("name", rs.getString("name") + "장군");
+	String email = rs.getString("email");
+	if("".equals(email)) email = "empty@gmail.com";
+	rs.put("email", email);
+}
+
+p.setLayout(null);
+p.setBody("main.index");
+p.setVar("title", "시작 페이지");
+p.setLoop("users", rs);
+p.display(out);
+
+%>
+}}}
+{{{
+<html>
+<body>
+{{title}} 입니다.
+<h3>회원목록</h3>
+<ul>
+  <!-- LOOP START 'users' -->
+  <li>{{users.name}} ({{users.email}})</li>
+  <!-- LOOP END 'users' -->
+</ul>
+</body>
+</html>
+}}}
