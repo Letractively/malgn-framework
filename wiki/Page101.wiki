@@ -1,0 +1,35 @@
+#summary 2. 데이타베이스 연동 프로그램 짜기
+
+== Step1 ==
+회원 테이블에서 회원 데이타를 가져와 화면에 출력하기
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject();
+DataSet rs = dao.query("SELECT * FROM tb_user WHERE name LIKE '%'");
+while(rs.next()) {
+	rs.put("name", rs.getString("name") + "장군");
+	String email = rs.getString("email");
+	if("".equals(email)) email = "empty@gmail.com";
+	rs.put("email", email);
+}
+
+p.setLayout(null);
+p.setBody("main.index");
+p.setLoop("users", rs);
+p.display(out);
+
+%>
+}}}
+{{{
+<html>
+<body>
+<h3>회원목록</h3>
+<ul>
+  <!-- LOOP START 'users' -->
+  <li>{{users.name}} ({{users.email}})</li>
+  <!-- LOOP END 'users' -->
+</ul>
+</body>
+</html>
+}}}
