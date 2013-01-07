@@ -17,12 +17,22 @@ html 페이지에 validate.js 를 추가한다.
 </body>
 </html>
 }}}
-</form> 태그 다음에 {{form_script}} 라는 템플릿 변수명도 추가한다.
+`</form>` 태그 다음에 {{form_script}} 라는 템플릿 변수명도 추가한다.
 
 == Step2 ==
 jsp 프로그램에서 form_script 를 지정한다.
 {{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
+DataObject dao = new DataObject("tb_user");
 
+f.addElement("name", null, "hname:'이름', required:'Y'");
+f.addElement("email", null, "hname:'이메일', required:'Y', option:'email'");
 
+p.setLayout(null);
+p.setBody("main.user_insert");
+p.setVar("form_script", f.getScript());
+p.display(out);
+
+%>
 }}}
