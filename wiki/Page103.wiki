@@ -1,0 +1,10 @@
+#summary 4. validate.js 를 이용한 자바스크립트 유효성 체크
+
+== Step1 ==
+html 페이지에 validate.js 를 추가한다.
+{{{
+<html>
+
+
+
+}}}
