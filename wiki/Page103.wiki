@@ -41,3 +41,44 @@ f.getScript() 메소드를 통해 자바스크립트 유효성 검사 코드를 
 
 == Step3 ==
 등록 프로세스에서 html 과 jsp 소스를 정리하면 아래와 같다.
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+DataObject dao = new DataObject("tb_user");
+
+f.addElement("name", null, "hname:'이름', required:'Y'");
+f.addElement("email", null, "hname:'이메일', required:'Y', option:'email'");
+
+if(m.isPost() && f.validate()) {
+
+  dao.item("name", f.get("name"));
+  dao.item("email", f.get("email"));
+  dao.insert();
+
+  m.jsAlert("성공적으로 회원가입이 완료되었습니다.");
+  m.jsReplace("user_insert_done.jsp");
+  return;
+}
+
+p.setLayout(null);
+p.setBody("main.user_insert");
+p.setVar("form_script", f.getScript());
+p.display(out);
+
+%>
+}}}
+{{{
+<html>
+<script language="javascript" src="/html/js/lib.validate.js"></script>
+<body>
+<h3>회원가입</h3>
+
+<form name="form1" method="POST">
+  <p><label>이름</label><br/><input type="text" name="name"></p>
+  <p><label>이메일</label><br/><input type="text" name="email" size="50"></p>
+  <p><input type="submit" value="회원가입"></p>
+</form>
+{{form_script}}
+</body>
+</html>
+}}}
