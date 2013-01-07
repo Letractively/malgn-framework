@@ -107,3 +107,28 @@ p.display(out);
 </body>
 </html>
 }}}
+
+== Step6 ==
+조건 치환은 아래와 같이 처리한다.
+{{{
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+
+p.setLayout(null);
+p.setBody("main.index");
+p.setVar("title", "시작 페이지");
+p.setVar("is_admin", true);
+p.display(out);
+
+%>
+}}}
+조건 치환은 변수값에 true 나 false 를 지정함으로 사용가능하다. true 값 대신에 임의의 값을 넣어도 된다. 이 경우 임의의 값이 있으면 true 값이 없으면 false 가 된다.
+{{{
+<html>
+<body>
+{{title}} 입니다.
+<!-- IF START 'is_admin' -->
+<p>관리자페이지 바로가기</p>
+<!-- IF END 'is_admin' -->
+</body>
+</html>
+}}}
