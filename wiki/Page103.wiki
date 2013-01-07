@@ -4,6 +4,24 @@
 html 페이지에 validate.js 를 추가한다.
 {{{
 <html>
+<script language="javascript" src="/html/js/lib.validate.js"></script>
+<body>
+<h3>회원가입</h3>
+
+<form name="form1" method="POST" action="user_insert.jsp">
+  <p><label>이름</label><br/><input type="text" name="name"></p>
+  <p><label>이메일</label><br/><input type="text" name="email" size="50"></p>
+  <p><input type="submit" value="회원가입"></p>
+</form>
+{{form_script}}
+</body>
+</html>
+}}}
+</form> 태그 다음에 {{form_script}} 라는 템플릿 변수명도 추가한다.
+
+== Step2 ==
+jsp 프로그램에서 form_script 를 지정한다.
+{{{
 
 
 
