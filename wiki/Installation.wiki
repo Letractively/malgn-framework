@@ -1,4 +1,4 @@
-#summary 맑은프레임워크 설치
+#summary 0. 맑은프레임워크 설치
 
 ==Step1==
 http://code.google.com/p/malgn-framework 사이트의 Downloads 페이지에서 malgn.jar 최신 파일을 다운로드 한다.
