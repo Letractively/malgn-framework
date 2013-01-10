@@ -37,3 +37,6 @@ http://code.google.com/p/malgn-framework 사이트의 Downloads 페이지에서 
     <load-on-startup>1</load-on-startup>
 </servlet>
 }}}
+
+==Step5==
+WAS (Web Application Server)를 재시작한다.
