@@ -1,5 +1,7 @@
 #summary [자바기초] 0. 용어정리
 
+<wiki:toc max_depth="1" />
+
 ===클래스(Class)===
 객체지향 프로그래밍(OOP)에서 클래스란 특정 객체를 생성하기 위한 틀로서 실제 코드상으로는 그 객체의 변수와 메쏘드로 정의된다.
 클래스는 OOP를 정의하는 개념 중 하나인데, 클래스에 대한 중요한 몇가지의 개념들은 다음과 같다.
@@ -21,7 +23,7 @@
 
 
 ===객체(Object)===
-(출처 : http://blog.daum.net/_blog/BlogTypeView.do?blogid=03gu8&articleno=24#ajax_history_home)
+(출처 : http://blog.daum.net/_blog/BlogTypeView.do?blogid=03gu8&articleno=24#ajax_history_home)<br>
 객체(Objects) 는 객체지향(Oriented-Object) 기술을 이해하기 위한 핵심 개념이다. 주위를 둘러보면 실제 세계의 객체들을 많이 찾아 볼 수 있다. 주로 강아지, 책상, 텔레비전, 자전거 등과 같은 것 들이다.
  
 이러한 실세계의 객체들은 두가지 특징을 가지고 있는데 바로 상태(State) 와 행동(Behavior) 을 가진다는 것이다. 예를 들어, 강아지는 이름, 색, 품종, 배고파함 등의 상태를 가지고 있으며, 짖다, 물어오다(Fetching), 꼬리를 흔들다 등의 행동들을 가지고 있다. 또 다른 예로 자전거라는 객체는 현재 기어, 현재 패달의 회전 속도, 바퀴 갯수, 기어의 단계수 등의 상태와 멈추다, 가속하다, 천천히 감속하다, 기어를 바꾸다 등의 행동을 가지고 있다.
