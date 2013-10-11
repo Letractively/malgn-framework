@@ -11,7 +11,7 @@
 
 <!-- INCLUDE NAME 'BODY' -->
 
-<div></div>
+<div>레이아웃 하단</div>
 </body>
 </html>
 }}}
