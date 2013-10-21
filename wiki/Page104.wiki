@@ -58,7 +58,7 @@ print 함수를 이용할 경우 템플릿 폴더를 기준으로 정확한 경�
 {{{
 <%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
-p.display(out, "sample/index.html");
+p.print(out, "sample/index.html");
 
 %>
 }}}
