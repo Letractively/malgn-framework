@@ -36,7 +36,7 @@ ListManager lm = new ListManager();
 lm.setListNum(10); // 목록 갯수 지정
 lm.setTable("TB_USER");
 lm.addSearch("type", type); //만약 type 이 빈공백이거나 null 이면 조건이 무시됨
-lm.addWhere("status", status, ">"); //세번째 파라미터는 연산기호를 의미함
+lm.addSearch("status", status, ">"); //세번째 파라미터는 연산기호를 의미함
 
 DataSet list = lm.getDataSet(); // 목록 데이타
 int total = lm.getTotalNum(); // 검색 데이타 갯수
